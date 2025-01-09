@@ -13,8 +13,7 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-    player.draw(screen)
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 50)
 
     while True:
         for event in pygame.event.get():
@@ -22,7 +21,8 @@ def main():
                 return
         dt = clock.tick(60) / 1000
 
-        screen.fill("#000000", rect=None, special_flags=0)
+        screen.fill((0, 0, 0))
+        player.draw(screen)
         pygame.display.flip()
 
 
